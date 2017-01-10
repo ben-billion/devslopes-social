@@ -12,12 +12,12 @@
 		00951EDF1E24494400695B98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00951EDD1E24494400695B98 /* Main.storyboard */; };
 		00951EE11E24494400695B98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00951EE01E24494400695B98 /* Assets.xcassets */; };
 		00951EE41E24494400695B98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00951EE21E24494400695B98 /* LaunchScreen.storyboard */; };
-		00951EEC1E24498200695B98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00951EEB1E24498200695B98 /* GoogleService-Info.plist */; };
 		00951EF11E246E5600695B98 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00951EF01E246E5600695B98 /* FancyView.swift */; };
 		00951EF41E246EB800695B98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00951EF31E246EB800695B98 /* Constants.swift */; };
 		00951EF61E2470AD00695B98 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00951EF51E2470AD00695B98 /* RoundButton.swift */; };
 		00951EF81E2471CD00695B98 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00951EF71E2471CD00695B98 /* FancyField.swift */; };
 		00951EFA1E24729F00695B98 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00951EF91E24729F00695B98 /* FancyButton.swift */; };
+		00B15E521E24BB1C00C83A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B15E511E24BB1C00C83A6A /* GoogleService-Info.plist */; };
 		E05B73CA5332CC794D8AB26B /* Pods_devslopes_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53C79F4BDBE9D7E144B5362 /* Pods_devslopes_social.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,12 +30,12 @@
 		00951EE01E24494400695B98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00951EE31E24494400695B98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00951EE51E24494400695B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00951EEB1E24498200695B98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00951EF01E246E5600695B98 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		00951EF31E246EB800695B98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		00951EF51E2470AD00695B98 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		00951EF71E2471CD00695B98 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		00951EF91E24729F00695B98 /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
+		00B15E511E24BB1C00C83A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		507190262FA67876D3B15497 /* Pods-devslopes-social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-social.release.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-social/Pods-devslopes-social.release.xcconfig"; sourceTree = "<group>"; };
 		A53C79F4BDBE9D7E144B5362 /* Pods_devslopes_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devslopes_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC41ADEA9CB62A736F9D4F27 /* Pods-devslopes-social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-social/Pods-devslopes-social.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,11 +75,11 @@
 			isa = PBXGroup;
 			children = (
 				009388001E24A36100F943D2 /* devslopes-social.entitlements */,
+				00B15E511E24BB1C00C83A6A /* GoogleService-Info.plist */,
 				00951EF21E246EAA00695B98 /* Util */,
 				00951EED1E244BB800695B98 /* Model */,
 				00951EEE1E244BBD00695B98 /* View */,
 				00951EEF1E244BC300695B98 /* Controller */,
-				00951EEB1E24498200695B98 /* GoogleService-Info.plist */,
 				00951ED91E24494400695B98 /* AppDelegate.swift */,
 				00951EDD1E24494400695B98 /* Main.storyboard */,
 				00951EE01E24494400695B98 /* Assets.xcassets */,
@@ -209,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00951EE41E24494400695B98 /* LaunchScreen.storyboard in Resources */,
-				00951EEC1E24498200695B98 /* GoogleService-Info.plist in Resources */,
+				00B15E521E24BB1C00C83A6A /* GoogleService-Info.plist in Resources */,
 				00951EE11E24494400695B98 /* Assets.xcassets in Resources */,
 				00951EDF1E24494400695B98 /* Main.storyboard in Resources */,
 			);
