@@ -32,4 +32,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
     }
+    
+    @IBAction func signOutPressed(_ sender: UITapGestureRecognizer) {
+        
+        let keychainResult = KeychainWrapper.standard.remove(key: KEY_UID)
+        print("BEN: ID removed from keychain - \(keychainResult)")
+        try! FIRAuth.auth()?.signOut()
+        performSegue(withIdentifier: "goToSignIn", sender: nil)
+        
+    }
 }
