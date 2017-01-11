@@ -209,6 +209,9 @@
                                                     <constraint firstAttribute="width" constant="49" id="GfQ-Rh-mve"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="add-post"/>
+                                                <connections>
+                                                    <action selector="postBtnPressed:" destination="SYQ-PL-X0c" eventType="touchUpInside" id="aIt-4F-pmv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -266,6 +269,9 @@
                                                                 </stackView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Oeu-9J-ORN">
                                                                     <rect key="frame" x="0.0" y="68" width="327" height="125"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="125" id="apy-Sd-b1s"/>
+                                                                    </constraints>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-la-IRd">
                                                                     <rect key="frame" x="0.0" y="201" width="327" height="50"/>
@@ -344,6 +350,7 @@
                     </view>
                     <connections>
                         <outlet property="addImage" destination="Ip9-Zr-Q0u" id="4fQ-qs-Ukh"/>
+                        <outlet property="captionField" destination="DCZ-RK-dBC" id="JUN-PT-hHf"/>
                         <outlet property="tableView" destination="x90-ly-Yds" id="tQi-uq-uiO"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="kLe-Hz-BqV"/>
                     </connections>

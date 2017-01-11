@@ -14,10 +14,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addImage: UIImageView!
+    @IBOutlet weak var captionField: FancyField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +77,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             addImage.image = image
+            imageSelected = true
         } else {
             print("BEN: Valid image wasn't selected")
         }
@@ -84,6 +87,53 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBAction func addImagePressed(_ sender: UITapGestureRecognizer) {
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func postBtnPressed(_ sender: RoundButton) {
+        guard let caption = captionField.text, caption != "" else {
+            print("BEN: Caption must be entered")
+            return
+        }
+        
+        guard let img = addImage.image, imageSelected == true else {
+            print("BEN: An image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            let imgUid = NSUUID().uuidString
+            let storageMetadata = FIRStorageMetadata()
+            storageMetadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: storageMetadata) { (metadata, error) in
+                if error != nil {
+                    print("BEN: Unable to upload image to Firebase Storage")
+                } else {
+                    print("BEN: Successfully uploaded image to Firebase Storage")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imgUrl: url)
+                    }
+                }
+            }
+        }
+    }
+    
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, Any> = [
+            "caption": captionField.text!,
+            "imageURL": imgUrl,
+            "likes": 0
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        addImage.image = UIImage(named: "add-image")
+        
+        tableView.reloadData()
     }
     
     @IBAction func signOutPressed(_ sender: UITapGestureRecognizer) {
